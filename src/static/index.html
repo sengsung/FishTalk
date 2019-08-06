@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>생선톡</title>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700&display=swap&subset=korean" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css" />
+</head>
+<body>
+  <div id="main">
+    <div class="main_wrap">
+        <div class="title">생선톡</div>
+        <div class="input_wrap"><input id="input_name" type="text" placeholder="사용자 이름"></div>
+        <div class="input_wrap"><input id="input_title" type="text" placeholder="방 이름"></div>
+        <div class="input_wrap"><input id="input_pwd" type="password" placeholder="방 비밀번호"></div>
+        <div class="button_wrap"><button onclick="connect()">접속</button></div>
+    </div>
+  </div>
+
+  <div id="main_chat" style="display: none">
+    <div class="head">
+      <div class="box_title">
+        <span class="chat_title" id="chat_title">방 이름</span>
+        <button onclick="leave()">나가기</button>
+      </div>
+      <div class="box_joinner" id="box_joinner">
+        <!--
+        <div class="joinner">생선스프</div>
+        -->
+      </div>
+    </div>
+    <div class="body" id="chat_body">
+      <!--
+      <div class="item_other">
+        <div class="item_other_wrap">
+            <img src="assets/img/profile.png">
+            <div class="box">
+                <div class="name">흑염소</div>
+                <div class="chat_other">123123adfasdfsafsadfsadfㅁㄴㅇㄹㄴㅁㅇㄻㄴㅇㄻㄴfaeafefㅁㄻㄴefasefㅁㄴㄹasefㅁㄴㄷㄹ</div>
+            </div>
+            <span class="time">오후 9:00</span>
+        </div>
+      </div>
+      <div class="item_me">
+        <div class="item_me_wrap">
+          <span class="time">오후 8:00</span>
+          <div class="chat_me">1321313ddddddddddddddddddddddddddddddddddd232</div>
+        </div>
+      </div>
+      <div class="item_notice">
+        adwadawd
+      </div>
+      -->
+    </div>
+    
+    <div class="chat">
+      <textarea id="textarea_chat" onkeydown="keyEvent(event)"></textarea>
+      <button onclick="send_chat()">전송</button>
+    </div>
+  </div>
+</body>
+</html>
