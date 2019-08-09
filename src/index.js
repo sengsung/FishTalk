@@ -109,7 +109,7 @@ io.on('connection', socket => {
     room = undefined;
     socket.leaveAll();
 
-    console.log(`${new Date()} ${socket.handshake.address} 채팅 떠남 : ${data.toString()} / 방 : ${room}`);
+    console.log(`${new Date()} ${socket.handshake.address} 채팅 떠남 / 방 : ${room}`);
   });
 
   socket.on('disconnect', data => {
@@ -128,7 +128,7 @@ io.on('connection', socket => {
     io.to(room).emit('chat_notice', { msg: `${name}님이 떠났습니다.` });
     io.to(room).emit('leave', { user: name });
 
-    console.log(`${new Date()} ${socket.handshake.address} 연결 끊김 : ${data.toString()} / 방 : ${room}`);
+    console.log(`${new Date()} ${socket.handshake.address} 연결 끊김 / 방 : ${room}`);
   });
 });
 // ===================== Socket End =======================
